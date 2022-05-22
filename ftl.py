@@ -28,12 +28,6 @@ def moving_average_20(stock, date):
     s = stock.loc[:date].tail(20)
     return s.close.sum() / 20
 
-
-
-
-
-
-
 def stochastic_slow_14(stock, date):
     stock = stock.loc[stock.index == date]
     close = stock.close
@@ -69,8 +63,6 @@ if __name__ == "__main__":
                     del history[number_of_trades]
                 number_of_trades += 1
 
-
-
     total_good_trades = 0
     for x in history:
         try:
@@ -90,24 +82,4 @@ if __name__ == "__main__":
     
     print(f"Total trades: {len(history)}, Positive Trades: {total_good_trades}")
     hr = round(total_good_trades/len(history)*100)
-    print(f"Hitrate: {hr}% (ROUNDED)")
-                
-
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
+    print(f"Hitrate: {hr}% (ROUNDED)")           

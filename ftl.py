@@ -13,7 +13,6 @@ Strategin ser ut som följande:
     - Stänger över MA20.
 
 """
-
 from API import borsdata_client as API
 ins = API.BorsdataAPI("f60921713ce64e95bd6699595853c572")
 import requests
@@ -37,16 +36,13 @@ def check_for_buy(today, yesterday, day_before):
     if today.size > 0:
         if today > 10:
             return True
-
     if yesterday.size > 0:
         if yesterday > 10:
             return True
-
     if day_before.size >0:
         if day_before > 10:
             return True
-
-
+        
 def summarize():
     total_good_trades = 0
     for x in history:
@@ -67,10 +63,7 @@ def summarize():
     print(f"Total trades: {len(history)}, Positive Trades: {total_good_trades}")
     hr = round(total_good_trades/len(history)*100)
     print(f"Hitrate: {hr}% (ROUNDED)")
-
-
-
-        
+   
 #BASERA SKITEN PÅ DATUM
 if __name__ == "__main__":
     bought = False
@@ -101,26 +94,3 @@ if __name__ == "__main__":
                 number_of_trades += 1
 
     summarize()
-
-
-
-                
-
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
-
-
-
-

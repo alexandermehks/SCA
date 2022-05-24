@@ -14,7 +14,7 @@ Strategin ser ut som följande:
 
 """
 from API import borsdata_client as API
-ins = API.BorsdataAPI("f60921713ce64e95bd6699595853c572")
+ins = API.BorsdataAPI(YOUR_API_KEY)
 import requests
 from datetime import date,timedelta
 
